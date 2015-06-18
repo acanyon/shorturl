@@ -27,7 +27,8 @@ end
 get '/:slug' do |slug|
   url = @@redirects[slug]
   if url
-    redirect to(url)
+    status 302
+    erb :redirect, locals: { redirect_url: url }
   else
     status 404
     send_file 'views/404.html'

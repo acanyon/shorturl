@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Welcome to Dr. Smith's TinyURLs</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  </head>
+  <body>
+      <div class="heading">
+          <div class="primary">Redirecting to</div>
+          <a class="secondary" href="<%= redirect_url %>"><%= redirect_url %></a>
+      </div>
+      <div class="primary_body"><div class="loading_icon"></div></div>
+  </body>
+
+  <script type="text/javascript">
+      $(function () {
+        setTimeout(function () {
+            window.location.assign("<%= redirect_url %>");
+        }, 250);
+      });
+  </script>
+
+  <style>
+
+    @font-face {
+        font-family: 'FontAwesome';
+        src: url('http://fortawesome.github.io/Font-Awesome/assets/font-awesome/fonts/fontawesome-webfont.eot?v=4.3.0');
+        src: url('http://fortawesome.github.io/Font-Awesome/assets/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'), url('http://fortawesome.github.io/Font-Awesome/assets/font-awesome/fonts/fontawesome-webfont.woff2?v=4.3.0') format('woff2'), url('http://fortawesome.github.io/Font-Awesome/assets/font-awesome/fonts/fontawesome-webfont.woff?v=4.3.0') format('woff'), url('http://fortawesome.github.io/Font-Awesome/assets/font-awesome/fonts/fontawesome-webfont.ttf?v=4.3.0') format('truetype'), url('http://fortawesome.github.io/Font-Awesome/assets/font-awesome/fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @media (max-width: 800px) {
+        .primary_body::after { display: none; }
+    }
+
+    body {
+        background-color: #E6F3F6;
+        color: #37352B;
+        font-family: sans-serif;
+        text-align: center;
+    }
+
+    .primary_body {
+        margin-bottom: 60px;
+        margin: 0 auto;
+        max-width: 500px;
+        position: relative;
+        text-align: center;
+    }
+
+    .primary_body::after {
+        background: url(http://thumbs.dreamstime.com/x/woman-doctor-24145108.jpg) no-repeat top left;
+        content: '';
+        height: 400px;
+        left: -200px;
+        position: absolute;
+        top: -230px;
+        width: 100%;
+        z-index: -1;
+    }
+
+    .loading_icon {
+        -webkit-animation: fa-spin 2s infinite linear;
+        animation: fa-spin 2s infinite linear;
+        color: rgba(144, 179, 188, 0.63);
+        display: inline-block;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        font-size: 120px;
+        margin-top: 20px;
+        text-rendering: auto;
+        transform: translate(0, 0);
+    }
+
+    .loading_icon::after {
+        content: '\f021';
+        font-family: 'FontAwesome';
+        display: inline-block;
+    }
+
+    .heading {
+        margin: 200px auto 40px;
+        max-width: 650px;
+    }
+
+    .heading .primary {
+        color: rgb(37, 92, 105);
+        font-size: 35px;
+        letter-spacing: 4px;
+        text-shadow: 1px 1px 2px rgba(77, 77, 77, 0.3);
+        text-transform: uppercase;
+    }
+
+    .heading .secondary {
+        font-size: 18px;
+        font-weight: 200;
+        margin-top: 5px;
+    }
+
+<!-- https://github.com/FortAwesome/Font-Awesome/blob/v4.3.0/less/animated.less -->
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+  </style>
+
+</html>

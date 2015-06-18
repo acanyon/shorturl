@@ -7,7 +7,10 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   </head>
   <body>
-      <div class="heading">Welcome to Dr. Smith's TinyURLs! She'll fix you right up.</div>
+      <div class="heading">
+          <div class="primary">Dr. Smith's TinyURLS</div>
+          <div class="secondary">Select a URL to shorten and we'll do the rest!</div>
+      </div>
       <div class="form_container">
           <form>
               <input name="url" placeholder="http://example.com">
@@ -73,9 +76,9 @@
     }
 
     body {
-        background-color: lightblue;
+        background-color: #E6F3F6;
+        color: #37352B;
         font-family: sans-serif;
-        margin-top: 150px;
         text-align: center;
     }
 
@@ -84,9 +87,10 @@
         border: none;
         box-sizing: border-box;
         box-shadow: 1px 1px 3px rgba(128, 128, 128, 0.52);
+        font-size: 16px;
         height: 35px;
         outline: none;
-        padding: 7px 60px 7px 15px;
+        padding: 10px 60px 10px 15px;
         width: 100%;
     }
 
@@ -104,14 +108,28 @@
         height: 400px;
         left: -200px;
         position: absolute;
-        top: -170px;
+        top: -230px;
         width: 100%;
         z-index: -1;
     }
 
     .heading {
-        font-size: 20px;
-        margin-bottom: 20px;
+        margin: 200px auto 40px;
+        max-width: 650px;
+    }
+
+    .heading .primary {
+        color: rgb(37, 92, 105);
+        font-size: 35px;
+        letter-spacing: 4px;
+        text-shadow: 1px 1px 2px rgba(77, 77, 77, 0.3);
+        text-transform: uppercase;
+    }
+
+    .heading .secondary {
+        font-size: 18px;
+        font-weight: 200;
+        margin-top: 5px;
     }
 
     button {
@@ -120,6 +138,7 @@
         border: none;
         bottom: 0;
         box-sizing: border-box;
+        box-shadow: -1px 0 rgba(231, 231, 231, 0.53);
         color: rgb(63, 63, 63);
         font-size: 20px;
         height: 35px;

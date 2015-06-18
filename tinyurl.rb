@@ -1,9 +1,10 @@
 require 'sinatra'
+require 'erb'
 
 @@redirects = { 'test' => 'http://example.com' }
 
 get '/' do
-  send_file 'index.html'
+  send_file 'views/index.html'
 end
 
 post '/create_url' do
@@ -20,7 +21,7 @@ end
 
 get '/404' do
   status 404
-  send_file '404.html'
+  send_file 'views/404.html'
 end
 
 get '/:slug' do |slug|
@@ -29,7 +30,7 @@ get '/:slug' do |slug|
     redirect to(url)
   else
     status 404
-    send_file '404.html'
+    send_file 'views/404.html'
   end
 end
 

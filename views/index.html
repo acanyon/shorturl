@@ -11,7 +11,7 @@
           <div class="primary">Dr. Smith's TinyURLS</div>
           <div class="secondary">Select a URL to shorten and we'll do the rest!</div>
       </div>
-      <div class="form_container">
+      <div class="primary_body">
           <form>
               <input name="url" placeholder="http://example.com">
               <button type="submit" disabled="disabled"></button>
@@ -40,7 +40,7 @@
           $.post('/create_url', $form.serialize())
             .done(function (slug) {
               var base_url = location.protocol + '//' + location.host;
-              $('.form_container').html(
+              $('.primary_body').html(
                 '<div class="success_container">' +
                     '<div class="title">Success! Enjoy.</div>' +
                     '<a href="' + slug + '" target="_blank">' + base_url + slug + '</a>' +
@@ -57,6 +57,7 @@
 
 
   <style>
+
     @font-face {
         font-family: 'FontAwesome';
         src: url('http://fortawesome.github.io/Font-Awesome/assets/font-awesome/fonts/fontawesome-webfont.eot?v=4.3.0');
@@ -66,7 +67,7 @@
     }
 
     @media (max-width: 800px) {
-        .form_container::after { display: none; }
+        .primary_body::after { display: none; }
     }
 
     button[type="submit"]::after {
@@ -94,7 +95,7 @@
         width: 100%;
     }
 
-    .form_container {
+    .primary_body {
         margin-bottom: 60px;
         margin: 0 auto;
         max-width: 500px;
@@ -102,7 +103,7 @@
         text-align: left;
     }
 
-    .form_container::after {
+    .primary_body::after {
         background: url(http://thumbs.dreamstime.com/x/woman-doctor-24145108.jpg) no-repeat top left;
         content: '';
         height: 400px;

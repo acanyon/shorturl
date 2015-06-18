@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Welcome to Dr. Smith's TinyURLs</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  </head>
+  <body>
+      <div class="heading">
+          <div class="primary">404 - Not Found</div>
+          <div class="secondary">The url cannot be found. Please try again.</div>
+      </div>
+      <div class="form_container"></div>
+  </body>
+
+  <style>
+
+    @media (max-width: 800px) {
+        .form_container::after { display: none; }
+    }
+
+    body {
+        background-color: #E6F3F6;
+        color: #37352B;
+        font-family: sans-serif;
+        text-align: center;
+    }
+
+    .form_container {
+        margin-bottom: 60px;
+        margin: 0 auto;
+        max-width: 500px;
+        position: relative;
+        text-align: left;
+    }
+
+    .form_container::after {
+        background: url(http://thumbs.dreamstime.com/x/woman-doctor-24145108.jpg) no-repeat top left;
+        content: '';
+        height: 400px;
+        left: -200px;
+        position: absolute;
+        top: -230px;
+        width: 100%;
+        z-index: -1;
+    }
+
+    .heading {
+        margin: 200px auto 40px;
+        max-width: 650px;
+    }
+
+    .heading .primary {
+        color: rgb(37, 92, 105);
+        font-size: 35px;
+        letter-spacing: 4px;
+        text-shadow: 1px 1px 2px rgba(77, 77, 77, 0.3);
+        text-transform: uppercase;
+    }
+
+    .heading .secondary {
+        font-size: 18px;
+        font-weight: 200;
+        margin-top: 5px;
+    }
+
+  </style>
+
+</html>

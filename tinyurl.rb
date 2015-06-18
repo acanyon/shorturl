@@ -20,7 +20,7 @@ end
 
 get '/404' do
   status 404
-  "Not found"
+  send_file '404.html'
 end
 
 get '/:slug' do |slug|
@@ -29,7 +29,7 @@ get '/:slug' do |slug|
     redirect to(url)
   else
     status 404
-    redirect to('/404')
+    send_file '404.html'
   end
 end
 
